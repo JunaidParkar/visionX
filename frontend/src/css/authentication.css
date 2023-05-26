@@ -1,0 +1,89 @@
+.bodyAuth{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.bodyAuth .navbar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+}
+
+.bodyAuth .navbar .options{
+    width: 350px;
+    justify-content: space-between;
+}
+
+.bodyAuth .navbar .options .option{
+    font-size: 25px;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.bodyAuth .navbar .options .option.active{
+    padding: 10px 20px;
+    background: var(--greyColor);
+    border-radius: var(--borderRadius);
+    cursor: no-drop;
+}
+
+.bodyAuth .navbar .hamburger {
+    display: none;
+}
+
+.bodyAuth .mainAuthBody{
+    height: 100%;
+    width: 100%;
+}
+
+.bodyAuth .mainAuthBody form{
+    width: 775px;
+}
+
+.bodyAuth .mainAuthBody form h3{
+    margin-bottom: 50px;
+    width: 100%;
+    text-align: center;
+    font-size: 35px;
+}
+
+.bodyAuth .mainAuthBody form .inputs{
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bodyAuth .mainAuthBody form .inputs input {
+    background: var(--pinkColor);
+    padding: 20px;
+    border-radius: var(--borderRadius);
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.bodyAuth .mainAuthBody form .inputs .btns{
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bodyAuth .mainAuthBody form .inputs .btns input {
+    padding: 15px 0;
+    width: 45%;
+    border-radius: var(--borderRadius);
+    background: var(--blueColor);
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.bodyAuth .mainAuthBody form .inputs .btns a{
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: 300;
+}

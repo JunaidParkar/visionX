@@ -1,0 +1,10 @@
+create user : 
+    {
+        email: "xyz@gmail.com",
+        password: "cenyuebde"
+    }
+
+create url :
+    {
+        OGurl: "https://google.com",
+    }

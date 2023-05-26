@@ -1,0 +1,52 @@
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 30px;
+    justify-content: end;
+    align-items: end;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    z-index: 999;
+    background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+
+.loader img{
+    width: 150px;
+    animation: logo 3s ease-in-out infinite;
+}
+
+.loader h3{
+    font-size: 25px;
+    font-weight: 400;
+    letter-spacing: 5px;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@keyframes logo {
+    0% {
+        opacity: .1;
+    }
+    50% {
+        opacity: .7;
+    }
+    100% {
+        opacity: .1;
+    }
+}

@@ -1,0 +1,8 @@
+12 server error or internal error
+13 user already exist
+14 user not found
+15 token failed
+16 No data available for your search
+
+
+500 no data in request in server

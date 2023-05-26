@@ -1,0 +1,68 @@
+*{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  user-select: none;
+  text-decoration: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  font-family: var(--josefinFontFamily);
+}
+
+:root {
+  --josefinFontFamily: 'Josefin Sans', sans-serif;
+
+  --borderRadius: 10px;
+  --padding: 50px;
+
+  --pinkColor: #F5E8F1;
+  --blueColor: #A7CFD2;
+  --greyColor: #D9D9D9;
+  --greenColor: #DCF0D7;
+  --redColor: #F96167;
+  --pureWhiteColor: #FFFFFF;
+}
+
+body{
+  width: 100vw;
+  height: 100vh;
+}
+
+#root{
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.displayNone {
+  display: none;
+}
+
+.flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 1080px) {
+  :root {
+    --padding: 25px
+  }
+}
+
+@media only screen and (max-width: 675px) {
+  body{
+    height: fit-content;
+  }
+  #root {
+    height: fit-content;
+  }
+}
