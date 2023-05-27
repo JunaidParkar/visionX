@@ -12,6 +12,7 @@ const UrlRedirect = () => {
 
     useEffect(() => {
       const checkStatus = async () => {
+        setIsLoading(true)
         await getUrlForRedirect(urlID).then(urlData => {
             if (urlData.stat === 200) {
                 if (urlData.data.active === "enable") {
@@ -27,6 +28,7 @@ const UrlRedirect = () => {
             alert(err)
             setIsActive(false)
         })
+        setIsLoading(false)
       }
       checkStatus()
     }, [])
