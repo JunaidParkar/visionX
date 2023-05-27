@@ -1,13 +1,13 @@
 const express = require('express');
-const { addURL, deleteURL, userUrls, toggleUrlVisibility, getOriginalUrl, filterURL } = require('./src/firebase/realTime');
+const { addURL, deleteURL, userUrls, toggleUrlVisibility, getOriginalUrl, filterURL, deleteUserDataAll } = require('./src/firebase/realTime');
 const cors = require('cors');
-const { getProjectsData } = require('./src/firebase/firestore');
+const { getProjectsData } = require('./src/firebase/fireStore');
 
 
 const app = express();
 const port = 3000;
 const corsOptions = {
-  origin: 'http://localhost:5173',
+  origin: ["https://vision-x25.web.app", "https://vision-x25.firebaseapp.com", "http://localhost:5173"],
 };
 
 
@@ -80,6 +80,11 @@ app.post("/getOriginalUrl", async (req, res) => {
   let response = await getOriginalUrl()
   let url = await filterURL(req.body.URLID, response)
   res.json({data: url})
+})
+
+app.post("/deleteUserData", async (req, res) => {
+  await deleteUserDataAll(req.body.uid)
+  res.json({status: 200})
 })
 
 app.listen(port, () => {

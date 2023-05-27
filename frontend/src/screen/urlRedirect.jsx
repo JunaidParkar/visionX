@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import Loader from '../components/loader'
 import { getUrlForRedirect } from '../functions/sessionFunction'
+import PageNotFound from './pageNotFound'
 
 const UrlRedirect = () => {
     const [isLoading, setIsLoading] = useState(true)
+    const [isActive, setIsActive] = useState(true)
     const {urlID} = useParams()
     console.log(urlID)
 
@@ -13,27 +15,26 @@ const UrlRedirect = () => {
         await getUrlForRedirect(urlID).then(urlData => {
             if (urlData.stat === 200) {
                 if (urlData.data.active === "enable") {
-                    window.location.href = urlData.data.url
+                  setIsActive(true)
+                  window.location.href = urlData.data.url
                 } else {
-                    navigate("/url")
+                  setIsActive(false)
                 }
             } else{
-                navigate("/url")
+                setIsActive(false)
             }
         }).catch(err => {
             alert(err)
-            navigate("/url")
+            setIsActive(false)
         })
       }
       checkStatus()
     }, [])
-
-    const navigate = useNavigate()
     
 
   return (
     <>
-        {isLoading ? <Loader /> : ""}
+        {isLoading ? <Loader /> : !isActive ? <PageNotFound /> : ""}
     </>
   )
 }

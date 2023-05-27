@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const api = axios.create({
-  baseURL: 'your server api.com',
+  baseURL: 'https://visionx-b9zs.onrender.com',
 });
 
 api.interceptors.request.use((config) => {

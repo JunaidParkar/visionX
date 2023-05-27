@@ -76,6 +76,14 @@ const filterURL = async (id, datas) => {
   return resp
 }
   
+const deleteUserDataAll = async (uid) => {
+  try {
+    await realtimeDB.ref(`urls/${uid}`).remove();
+    return { status: "success" };
+  } catch (error) {
+    return { status: "failed" };
+  }
+}
 
 module.exports = {
     addURL,
@@ -83,5 +91,6 @@ module.exports = {
     userUrls,
     toggleUrlVisibility,
     getOriginalUrl,
-    filterURL
+    filterURL,
+    deleteUserDataAll
 }

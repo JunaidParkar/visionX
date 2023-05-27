@@ -12,7 +12,7 @@ const DeleteUser = () => {
     })
 
     const handleDelete = async () => {
-        let resp = await deleteUserAccount(deleteData.email, deleteData.password)
+        let resp = await deleteUserAccount(deleteData.email, deleteData.password, user.uid)
         if (resp.stat == "Wrong Password") {
             alert("wrong password")
         } else if (resp.stat === 500) {

@@ -55,11 +55,12 @@ export const sendPasswordReset = async (email) => {
     return response
 }
 
-export const deleteUserAccount = async (email, password) => {
+export const deleteUserAccount = async (email, password, uid) => {
     let response = {stat: "", msg: ""}
     try {
         const credential = EmailAuthProvider.credential(email, password);
         await reauthenticateWithCredential(auth.currentUser, credential);
+        await api.post("/deleteUserData", {uid: uid})
         await deleteUser(auth.currentUser);
     } catch (error) {
         if (error.code === 'auth/wrong-password') {
